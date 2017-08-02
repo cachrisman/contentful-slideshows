@@ -1,0 +1,32 @@
+title: Contentful Slideshows
+email: charlie@contentful.com
+description: ""
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - config.ru
+  - vendor
+
+contentful:
+  spaces:
+    - contentful:
+        space: ENV_CONTENTFUL_SPACE_ID
+        access_token: ENV_CONTENTFUL_ACCESS_TOKEN
+        cda_query:
+          content_type: slideshow
+        destination: ./
+        individual_entry_files: true
+        individual_entry_filename_field: "['slug']" # Optional - Defaults to "['sys']['id']"
+
+page_gen:
+  - data: 'contentful.slideshow'
+    template: 'slideshow'
+    name: 'slug'
+    dir: 'slideshows'

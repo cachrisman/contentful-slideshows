@@ -77,7 +77,7 @@ DEPENDENCIES
   minima
 
 RUBY VERSION
-   ruby 2.4.0p0
+   ruby 2.4.3
 
 BUNDLED WITH
    1.15.3
